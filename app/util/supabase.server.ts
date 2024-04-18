@@ -1,5 +1,5 @@
 import {createServerClient as _createServerClient} from '@supabase/auth-helpers-remix';
-import {Database} from "~/types/database.types";
+import type {Database} from "~/types/database.types";
 import {createClient} from "@supabase/supabase-js";
 import process from "process";
 

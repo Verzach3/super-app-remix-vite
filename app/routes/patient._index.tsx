@@ -2,13 +2,13 @@ import {Card, Center, Container, Group, Image, SimpleGrid, Stack, Text, Title, U
 import {IconCaretRight} from "@tabler/icons-react";
 import {motion} from "framer-motion";
 import {FaUserDoctor} from "react-icons/fa6";
-import {json, LoaderFunctionArgs} from "@remix-run/node";
+import {json, type LoaderFunctionArgs} from "@remix-run/node";
 import {getPatientData} from "~/util/emrAPI.server";
 import {useLoaderData, useNavigate} from "@remix-run/react";
 import {useEffect, useState} from "react";
-import {Patient} from "fhir/r4";
+import type {Patient} from "fhir/r4";
 import {createServerClient} from "~/util/supabase.server";
-import {PatientProfile} from "~/types/DBTypes";
+import type {PatientProfile} from "~/types/DBTypes";
 import {PatientShortcuts} from "~/components/dashboard/patients/PatientShortcuts";
 import {SurveyCard} from "~/components/patient/surveys/SurveyCard";
 

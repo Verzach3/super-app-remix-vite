@@ -1,7 +1,7 @@
-import {Medication, Patient} from "fhir/r4";
+import type {Medication, Patient} from "fhir/r4";
 import getAxiosClientServer from "~/util/getAxiosClient.server";
 import {getToken} from "~/util/tokenUtil.server";
-import {AxiosRequestConfig, AxiosResponse} from "axios";
+import type {AxiosRequestConfig, AxiosResponse} from "axios";
 import {refreshToken} from "~/util/refreshtoken.server";
 
 const baseURL = `https:// ${process.env.EMR_BASE_URL!}`;

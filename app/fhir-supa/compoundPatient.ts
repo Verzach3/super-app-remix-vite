@@ -1,4 +1,4 @@
-import {Patient} from "fhir/r4";
+import type {Patient} from "fhir/r4";
 import type {PatientProfile} from "~/types/DBTypes";
 
 class CompoundPatient {

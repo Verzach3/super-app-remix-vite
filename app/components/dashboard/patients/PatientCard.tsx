@@ -1,6 +1,6 @@
 import {Button, Card, Container, Group, Stack, Text, ThemeIcon} from "@mantine/core";
 import {IconUser, IconUserPlus} from "@tabler/icons-react";
-import CompoundPatient from "~/fhir-supa/compoundPatient";
+import type CompoundPatient from "~/fhir-supa/compoundPatient";
 
 function PatientCard({patient}: { patient: CompoundPatient }) {
   return <Card withBorder m={"md"}>

@@ -1,12 +1,12 @@
-import {Button, Container, Divider, Group, Menu, SimpleGrid, Stack, Text, Title} from "@mantine/core";
-import MedicationCard from "~/components/patient/medications/MedicationCard";
-import ResultsFilter from "~/components/patient/ResultsFilter";
-import {json, LoaderFunctionArgs} from "@remix-run/node";
+import {Container, SimpleGrid, Text, Title} from "@mantine/core";
+import {type LoaderFunctionArgs,json } from "@remix-run/node";
+import {useLoaderData} from "@remix-run/react";
 import {createServerClient} from "@supabase/auth-helpers-remix";
-import {Database} from "~/types/database.types";
+import ResultsFilter from "~/components/patient/ResultsFilter";
+import MedicationCard from "~/components/patient/medications/MedicationCard";
+import type {Database} from "~/types/database.types";
 import {checkForRoles} from "~/util/checkForRole";
 import {getPatientMedication} from "~/util/emrAPI.server";
-import {useLoaderData} from "@remix-run/react";
 
 export async function loader({request}: LoaderFunctionArgs) {
   const response = new Response();
@@ -21,7 +21,7 @@ export async function loader({request}: LoaderFunctionArgs) {
       status: 401
     })
   }
-
+  await supabase.auth.getUser();
   const session = await supabase.auth.getSession();
   if (!session) {
     return json(null, {
@@ -35,7 +35,7 @@ export async function loader({request}: LoaderFunctionArgs) {
     })
   }
 
-  const medications = await getPatientMedication(profile.data.emr_id!);
+  const medications = await getPatientMedication(profile.data.emr_id ?? "");
   return json({medications}, {
     headers: response.headers
   })

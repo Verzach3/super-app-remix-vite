@@ -1,7 +1,7 @@
 import {Button, MultiSelect, ThemeIcon} from "@mantine/core";
 import {IconSearch} from "@tabler/icons-react";
-import {PatientProfile} from "~/types/DBTypes";
-import React from "react";
+import type {PatientProfile} from "~/types/DBTypes";
+import type React from "react";
 
 function AsignSurvey({data, search, setSearch}: {
   data: PatientProfile[],

@@ -1,7 +1,7 @@
 import {UnstyledButton, Group, Avatar, Text, rem, Stack} from '@mantine/core';
 import {IconChevronRight} from '@tabler/icons-react';
 import classes from '../../styles/dashboard/UserButton.module.css';
-import {Session} from "@supabase/auth-helpers-remix";
+import type {Session} from "@supabase/auth-helpers-remix";
 
 export function UserButton({session}: { session?: Session }) {
   return (

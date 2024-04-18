@@ -1,34 +1,17 @@
-import {
-  ActionIcon,
-  Button,
-  Card,
-  Group,
-  Input,
-  Stack,
-  Title,
-  Text,
-  Container,
-  Center, Grid, ThemeIcon, Badge, SegmentedControl, rem
-} from "@mantine/core";
+import {Button, Center, Grid, Group, Input, rem, SegmentedControl, Title} from "@mantine/core";
 import SurveysListItem from "~/components/dashboard/surveys/SurveysListItem";
-import {
-  IconChevronDown,
-  IconDots,
-  IconLayoutGrid, IconLayoutList,
-  IconSearch,
-  IconUser
-} from "@tabler/icons-react";
+import {IconChevronDown, IconLayoutGrid, IconLayoutList, IconSearch} from "@tabler/icons-react";
 import {useDisclosure} from "@mantine/hooks";
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {type ActionFunctionArgs, json, type LoaderFunctionArgs} from "@remix-run/node";
 import {useLoaderData} from "@remix-run/react";
 import {createServerClient} from "@supabase/auth-helpers-remix";
 import type {Database} from "~/types/database.types";
 import process from "node:process";
 import {checkForRoles} from "~/util/checkForRole";
-import AsignSurvey from "~/components/dashboard/surveys/AsignSurvey";
 import {CardTable} from "~/components/dashboard/surveys/CardTable";
 import {CreateSurveyModal} from "~/components/dashboard/surveys/CreateSurveyModal";
+import {SurveyItem} from "~/components/dashboard/surveys/SurveyItem";
 
 export const loader = async ({request}: LoaderFunctionArgs) => {
   const response = new Response();
@@ -144,76 +127,49 @@ function DashboardSurveys() {
         </Group>
         <Grid mb={"md"}>
           <Grid.Col span={{base: 12, md: 6, lg: 4}}>
-            <Card>
-              <Card.Section>
-                <Card withBorder radius={"lg"} shadow={"md"}>
-                  <Card.Section>
-                    <Container mt={"md"}>
-                      <Badge size={"md"}>
-                        Programa
-                      </Badge>
-                    </Container>
-                  </Card.Section>
-                  <Card.Section>
-                    <Center>
-                      <Stack>
-                        <Container>
-                          <Text size={"2rem"} fw={700} ta={"center"} ff={"Inter"}>
-                            1,240
-                          </Text>
-                          <Text size={"sm"} ta={"center"} ff={"Inter"} fw={600} c={"gray"}>
-                            Responses
-                          </Text>
-                        </Container>
-                      </Stack>
-                      <Stack>
-                        <Container my={"xl"}>
-                          <Center>
-                            <Text size={"2rem"} fw={700} ta={"center"} ff={"Inter"}>
-                              7.65
-                            </Text>
-                            <Text size={"1rem"} fw={700} ta={"center"} ff={"Inter"} c={"gray"}
-                                  style={{alignContent: "center"}}>%</Text>
-                          </Center>
-                          <Text size={"sm"} ta={"center"} ff={"Inter"} fw={600} c={"gray"}>
-                            Responses
-                          </Text>
-                        </Container>
-                      </Stack>
-                    </Center>
-                  </Card.Section>
-                  <Card.Section>
-                    <Container fluid mb={"xs"}>
-                      <Center style={{justifyContent: "left"}}>
-                        <ThemeIcon variant={"white"} c={"gray"} size={"sm"}>
-                          <IconUser/>
-                        </ThemeIcon>
-                        <Text size={"xs"} ff={"Inter"} fw={700}>
-                          120 Asignados
-                        </Text>
-                      </Center>
-                    </Container>
-                  </Card.Section>
-                </Card>
-              </Card.Section>
-              <Card.Section>
-                <Group grow justify={"space-between"}>
-                  <Group grow my={"xs"} justify={"flex-start"} ml={"md"}>
-                    <Stack gap={0}>
-                      <Text ta={"left"} size={"md"} ff={"Inter"} fw={600}>
-                        Titulo de la Encuesta
-                      </Text>
-                      <Text size={"xs"} ff={"Inter"} c={"gray"} fw={600}>
-                        Ultima respuesta: Agosto 12, 2021 a las 12:00 PM
-                      </Text>
-                    </Stack>
-                  </Group>
-                  <ActionIcon variant={"white"} c={"gray"} size={"md"}>
-                    <IconDots/>
-                  </ActionIcon>
-                </Group>
-              </Card.Section>
-            </Card>
+            <SurveyItem
+              title="Titulo de la Encuesta"
+              lastResponse="Agosto 12, 2021 a las 12:00 PM"
+              responses={1240}
+              percentage={7.65}
+              assigned={120}
+            />
+          </Grid.Col>
+          <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+            <SurveyItem
+              title="Titulo de la Encuesta"
+              lastResponse="Agosto 12, 2021 a las 12:00 PM"
+              responses={1240}
+              percentage={7.65}
+              assigned={120}
+            />
+          </Grid.Col>
+          <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+            <SurveyItem
+              title="Titulo de la Encuesta"
+              lastResponse="Agosto 12, 2021 a las 12:00 PM"
+              responses={1240}
+              percentage={7.65}
+              assigned={120}
+            />
+          </Grid.Col>
+          <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+            <SurveyItem
+              title="Titulo de la Encuesta"
+              lastResponse="Agosto 12, 2021 a las 12:00 PM"
+              responses={1240}
+              percentage={7.65}
+              assigned={120}
+            />
+          </Grid.Col>
+          <Grid.Col span={{base: 12, md: 6, lg: 4}}>
+            <SurveyItem
+              title="Titulo de la Encuesta"
+              lastResponse="Agosto 12, 2021 a las 12:00 PM"
+              responses={1240}
+              percentage={7.65}
+              assigned={120}
+            />
           </Grid.Col>
         </Grid>
         <CardTable loaderData={loaderData} callbackfn={(survey) => (

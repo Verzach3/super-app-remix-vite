@@ -1,4 +1,4 @@
-import {Survey} from "~/types/DBTypes";
+import type {Survey} from "~/types/DBTypes";
 import {Card, Group, Progress, Stack, Text} from "@mantine/core";
 import classes from "~/styles/patient/surveys/SurveyCard.module.css"
 

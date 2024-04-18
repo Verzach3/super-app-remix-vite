@@ -47,9 +47,13 @@
     "react-icons": "^5.1.0",
     "recharts": "2",
     "redis": "^4.6.13",
+    "remix-utils": "^7.6.0",
     "superagent": "^8.1.2",
     "survey-core": "^1.9.139",
-    "survey-react-ui": "^1.9.139"
+    "survey-creator-core": "^1.9.139",
+    "survey-creator-react": "^1.9.139",
+    "survey-react-ui": "^1.9.139",
+    "vite-plugin-commonjs": "^0.10.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.0",

@@ -10,7 +10,7 @@ import {
   IconSettings,
   IconTrash, IconUserPlus
 } from "@tabler/icons-react";
-import {Survey} from "~/types/DBTypes";
+import type {Survey} from "~/types/DBTypes";
 
 function SurveysListItem({survey}: { survey: Survey }) {
   const [opened, {open, close}] = useDisclosure(false)

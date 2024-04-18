@@ -1,14 +1,10 @@
 import {
-  Card,
   Container,
-  Group,
-  Progress, SimpleGrid,
-  Stack,
-  Text,
+  SimpleGrid,
   Title,
 } from "@mantine/core";
 import {createServerClient} from "~/util/supabase.server";
-import {json, LoaderFunctionArgs} from "@remix-run/node";
+import {json, type LoaderFunctionArgs} from "@remix-run/node";
 import {useLoaderData, useNavigate} from "@remix-run/react";
 import {useEffect} from "react";
 import {SurveyCard} from "~/components/patient/surveys/SurveyCard";
@@ -34,7 +30,7 @@ function PatientSurveys() {
 
   useEffect(() => {
     console.log(loaderData);
-  }, []);
+  }, [loaderData]);
   return (
     <Container mt={"1rem"}>
       <Title

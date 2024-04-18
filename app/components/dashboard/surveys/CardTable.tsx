@@ -1,4 +1,4 @@
-import {PatientProfile, Survey} from "~/types/DBTypes";
+import type {PatientProfile, Survey} from "~/types/DBTypes";
 import {Card, Table} from "@mantine/core";
 
 export function CardTable(props: {

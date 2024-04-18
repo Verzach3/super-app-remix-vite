@@ -8,8 +8,8 @@ import {
 } from "@mantine/core";
 import classes from "~/styles/routes/auth.module.css";
 import {useNavigate, useOutletContext} from "@remix-run/react";
-import {Session, SupabaseClient} from "@supabase/auth-helpers-remix";
-import {Database} from "~/types/database.types";
+import type {Session, SupabaseClient} from "@supabase/auth-helpers-remix";
+import type {Database} from "~/types/database.types";
 import {useEffect, useState} from "react";
 import {useForm} from "@mantine/form";
 import {useDisclosure} from "@mantine/hooks";
@@ -19,7 +19,7 @@ function Auth() {
   const navigate = useNavigate();
   const [isModalOpened, {close, open}] = useDisclosure();
   const [loading, setLoading] = useState<boolean>(false);
-  const {supabase, session} = useOutletContext<{ supabase: SupabaseClient<Database>, session: Session | null }>();
+  const {supabase} = useOutletContext<{ supabase: SupabaseClient<Database>, session: Session | null }>();
   const loginForm = useForm({
     initialValues: {
       email: "",
@@ -44,7 +44,7 @@ function Auth() {
         navigate("/");
       }
     })
-  }, []);
+  }, [navigate, supabase.auth]);
 
   return (
     <>
