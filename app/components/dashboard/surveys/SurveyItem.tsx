@@ -5,12 +5,18 @@ import {
 	Center,
 	Container,
 	Group,
-	Menu, rem,
+	Menu,
+	rem,
 	Stack,
 	Text,
 	ThemeIcon,
 } from "@mantine/core";
-import {IconDots, IconMessageCircle, IconSettings, IconUser} from "@tabler/icons-react";
+import {
+	IconDots,
+	IconMessageCircle,
+	IconSettings,
+	IconUser,
+} from "@tabler/icons-react";
 
 interface SurveyItemProps {
 	title: string;
@@ -33,7 +39,9 @@ export function SurveyItem({
 				<Card withBorder radius={"lg"} shadow={"md"}>
 					<Card.Section>
 						<Container mt={"md"}>
-							<Badge size={"md"} variant={"light"}>Programa</Badge>
+							<Badge size={"md"} variant={"light"}>
+								Programa
+							</Badge>
 						</Container>
 					</Card.Section>
 					<Card.Section>
@@ -112,16 +120,26 @@ export function SurveyItem({
 					</Group>
 					<Menu shadow="md" width={200}>
 						<Menu.Target>
-							<ActionIcon variant={"white"} c={"gray"} size={"md"}>
-								<IconDots />
-							</ActionIcon>
+									<ActionIcon variant={"white"} c={"gray"} size={"md"}>
+										<IconDots />
+									</ActionIcon>
 						</Menu.Target>
 						<Menu.Dropdown>
 							<Menu.Label>Application</Menu.Label>
-							<Menu.Item leftSection={<IconSettings style={{ width: rem(14), height: rem(14) }} />}>
+							<Menu.Item
+								leftSection={
+									<IconSettings style={{ width: rem(14), height: rem(14) }} />
+								}
+							>
 								Settings
 							</Menu.Item>
-							<Menu.Item leftSection={<IconMessageCircle style={{ width: rem(14), height: rem(14) }} />}>
+							<Menu.Item
+								leftSection={
+									<IconMessageCircle
+										style={{ width: rem(14), height: rem(14) }}
+									/>
+								}
+							>
 								Messages
 							</Menu.Item>
 						</Menu.Dropdown>

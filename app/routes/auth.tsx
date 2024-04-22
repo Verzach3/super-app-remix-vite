@@ -33,7 +33,7 @@ function Auth() {
     setLoading(true);
     await supabase.auth.signInWithOtp({
       email: email,
-      options: {emailRedirectTo: "http://localhost:3000/auth/callback"}
+      options: {emailRedirectTo: "http://localhost:5173/auth/callback"}
     });
   }
 

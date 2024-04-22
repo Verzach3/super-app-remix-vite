@@ -15,6 +15,7 @@ import {SurveyCard} from "~/components/patient/surveys/SurveyCard";
 export async function loader({ request }: LoaderFunctionArgs) {
 	const response = new Response();
 	const supabase = createServerClient({ request, response });
+	await supabase.auth.getUser();
 	const session = await supabase.auth.getSession();
 	const profile = await supabase
 		.from("patient_profiles")

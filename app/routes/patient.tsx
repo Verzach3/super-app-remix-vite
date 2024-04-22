@@ -3,11 +3,10 @@ import {
 	useActionData,
 	useLoaderData,
 	useNavigate,
-	useNavigation,
 	useOutletContext,
 	useSubmit,
 } from "@remix-run/react";
-import {AppShell, Box, Center, LoadingOverlay, Modal, rem} from "@mantine/core";
+import {AppShell, LoadingOverlay, Modal, rem} from "@mantine/core";
 import { useCallback, useEffect } from "react";
 import { Header } from "~/components/patient/Header";
 import NavBar from "~/components/patient/NavBar";
@@ -96,7 +95,7 @@ export async function action({ request }: ActionFunctionArgs) {
 		return json(
 			{ error: "Ya tienes un perfil" },
 			{
-				status: 418,
+				status: 409,
 			},
 		);
 	}
@@ -117,7 +116,6 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 function Patient() {
-	const navigation = useNavigation();
 	const navigate = useNavigate();
 	const loaderData = useLoaderData<typeof loader>();
 	const actionData = useActionData<typeof action>();

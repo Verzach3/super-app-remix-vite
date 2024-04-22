@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Verzach3-s-workspace-l4k58l.us-east-1.xata.sh/db/wellfit-clinic-main",
+  "codegen": {
+    "output": "app/db/xata.server.ts"
+  }
+}
